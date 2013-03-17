@@ -10,8 +10,9 @@ class Ltsv
   end
 
   def set(key, val)
+    old_val = @hash[key]
     @hash[key] = val
-    nil
+    old_val
   end
 
 end
