@@ -101,4 +101,13 @@ describe Ltsv do
       it{ should == val }
     end
   end
+
+  describe "#parse" do
+    subject{ Ltsv.parse(dump_str) }
+
+    let(:dump_str) { "foo:hoge\tbar:fuga\n" }
+
+    its(["foo"]){ should == "hoge" }
+    its(["bar"]){ should == "fuga" }
+  end
 end

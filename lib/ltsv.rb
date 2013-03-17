@@ -26,4 +26,16 @@ class Ltsv
     @hash[key]
   end
 
+  alias :[]  :get
+  alias :[]= :set
+
+  def self.parse(dump_str)
+    ltsv = Ltsv.new
+    dump_str.each_line("\t") do |line|
+      patterns = line.chomp.chomp("\t").scan(/(.+):(.+)/)
+      ltsv.set(patterns.first[0], patterns.first[1])
+    end
+    ltsv
+  end
+
 end
