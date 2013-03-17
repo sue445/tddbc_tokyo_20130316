@@ -1,4 +1,4 @@
-# お題
+# お題 [![Build Status](https://travis-ci.org/sue445/tddbc_tokyo_20130316.png)](https://travis-ci.org/sue445/tddbc_tokyo_20130316)
 ## 1枚目
 ```
 class LTSV {
