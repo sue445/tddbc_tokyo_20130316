@@ -15,4 +15,8 @@ class Ltsv
     old_val
   end
 
+  def get(key)
+    @hash[key]
+  end
+
 end

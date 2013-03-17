@@ -43,4 +43,24 @@ describe Ltsv do
       it{ should == old_val }
     end
   end
+
+  describe "#get" do
+    subject{ ltsv.get(key) }
+
+    let(:key) {"foo"}
+
+    context "値が入ってない時" do
+      it{ should be_nil }
+    end
+
+    context "値が入っている時" do
+      let(:val) {"hoge"}
+
+      before do
+        ltsv.set(key, val)
+      end
+
+      it{ should == val }
+    end
+  end
 end
