@@ -19,7 +19,7 @@ ltsv.set( "foo", "piyo")  #=> "hoge"
                           #     ↑ 置き換えられた値
 
 ltsv.dump()               #=> "bar:fuga\tfoo:piyo\n"
-                          #     ↑ 格納純にダンプされる
+                          #     ↑ 格納順にダンプされる
 ```
 
 ## 2枚目

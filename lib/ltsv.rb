@@ -6,7 +6,11 @@ class Ltsv
   end
 
   def dump
-    "\n"
+    lines = []
+    @hash.each do |key, val|
+      lines << "#{key}:#{val}"
+    end
+    lines.join("\t") + "\n"
   end
 
   def set(key, val)

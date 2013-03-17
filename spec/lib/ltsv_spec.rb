@@ -9,6 +9,14 @@ describe Ltsv do
     context "値が入っていない時" do
       it{ should == "\n" }
     end
+
+    context "1回目" do
+      before do
+        ltsv.set("foo", "hoge")
+      end
+
+      it{ should == "foo:hoge\n" }
+    end
   end
 
   describe '#set' do
