@@ -23,6 +23,14 @@ describe Ltsv do
         end
 
         it{ should == "foo:hoge\tbar:fuga\n" }
+
+        context "3回目" do
+          before do
+            ltsv.set("foo", "piyo")
+          end
+
+          it{ should == "bar:fuga\tfoo:piyo\n" }
+        end
       end
     end
   end

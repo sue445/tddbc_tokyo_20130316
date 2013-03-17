@@ -14,7 +14,7 @@ class Ltsv
   end
 
   def set(key, val)
-    old_val = @hash[key]
+    old_val = @hash.delete(key)
     @hash[key] = val
     old_val
   end
