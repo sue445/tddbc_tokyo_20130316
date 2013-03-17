@@ -14,6 +14,9 @@ class Ltsv
   end
 
   def set(key, val)
+    raise "key is required" if key.nil? || key.empty?
+    raise "val is required" if val.nil?
+
     old_val = @hash.delete(key)
     @hash[key] = val
     old_val

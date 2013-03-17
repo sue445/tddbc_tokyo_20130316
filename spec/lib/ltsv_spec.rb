@@ -66,6 +66,20 @@ describe Ltsv do
 
       it{ should == old_val }
     end
+
+    context "異常系" do
+      where(:key, :val) do
+        [
+            [nil, "momo"],
+            ["", "gogo"],
+            ["key", nil],
+        ]
+      end
+
+      with_them do
+        it { expect { subject }.to raise_error }
+      end
+    end
   end
 
   describe "#get" do
