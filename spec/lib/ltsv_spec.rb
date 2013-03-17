@@ -33,6 +33,24 @@ describe Ltsv do
         end
       end
     end
+
+    context "メタ文字が入っている時" do
+      where(:key, :val, :excepted) do
+        [
+            ["foo", "\thoge", "foo:\\thoge\n"],
+            ["foo", "\:hoge", "foo:\\:hoge\n"],
+            ["foo", "\nhoge", "foo:\\nhoge\n"],
+        ]
+      end
+
+      with_them do
+        before do
+          ltsv.set(key, val)
+        end
+
+        it{ should == excepted }
+      end
+    end
   end
 
   describe '#set' do

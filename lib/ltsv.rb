@@ -6,8 +6,16 @@ class Ltsv
   end
 
   def dump
+    meta_chars = [
+        {before: "\t", after: "\\t"},
+        {before: "\n", after: "\\n"},
+        {before: "\:", after: "\\:"},
+    ]
     lines = []
     @hash.each do |key, val|
+      meta_chars.each do |meta|
+        val = val.gsub(meta[:before], meta[:after])
+      end
       lines << "#{key}:#{val}"
     end
     lines.join("\t") + "\n"
