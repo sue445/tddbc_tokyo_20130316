@@ -1,7 +1,7 @@
 # お題
 ## 1枚目
 ```
-class LYSV {
+class LTSV {
   set(String key, String val) : String
   get(String key) : String
   dump() : String
