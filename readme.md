@@ -1,4 +1,4 @@
-# お題 [![Build Status](https://travis-ci.org/sue445/tddbc_tokyo_20130316.png)](https://travis-ci.org/sue445/tddbc_tokyo_20130316) [![Coverage Status](https://coveralls.io/repos/sue445/tddbc_tokyo_20130316/badge.png?branch=master)](https://coveralls.io/r/sue445/tddbc_tokyo_20130316)
+# お題 [![Build Status](https://travis-ci.org/sue445/tddbc_tokyo_20130316.png)](https://travis-ci.org/sue445/tddbc_tokyo_20130316) [![Coverage Status](https://coveralls.io/repos/sue445/tddbc_tokyo_20130316/badge.png?branch=master)](https://coveralls.io/r/sue445/tddbc_tokyo_20130316) [![Dependency Status](https://gemnasium.com/sue445/tddbc_tokyo_20130316.png)](https://gemnasium.com/sue445/tddbc_tokyo_20130316)
 
 ## 1枚目
 ```
