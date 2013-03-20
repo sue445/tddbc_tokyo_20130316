@@ -18,4 +18,6 @@ group :development do
 
   # Runs on Windows
   #gem 'rb-notifu'
+
+  gem 'coveralls', require: false
 end
