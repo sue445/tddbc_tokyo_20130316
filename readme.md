@@ -28,10 +28,15 @@ ltsv.dump()               #=> "bar:fuga\tfoo:piyo\n"
 // 例外条件を考えてみよう
 
 ltsv.get( "toto" )      #=> 存在しないキーの値はnull
-ltsv.set( nil, "momo" )   # nullキーは例外発生
-ltsv.set( "", "gogo" )    # 空文字キーは例外発生
+ltsv.set( nil  , "momo" ) # nullキーは例外発生
+ltsv.set( ""   , "gogo" ) # 空文字キーは例外発生
 ltsv.set( "key", null )   # null値は例外発生
 ltsv.set( "key", "" )     # 空文字値はOK -> dumpは?
+
+// データにコロンが入ってたら?
+// データに改行が入っていたら?
+// データにタブ文字が入っていたら?
+     #=> 上記は全てバックスラッシュでエスケープ
 ```
 
 ## 3枚目
