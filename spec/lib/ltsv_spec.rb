@@ -7,7 +7,7 @@ describe Ltsv do
     subject{ ltsv.dump }
 
     context "値が入っていない時" do
-      it{ should == "\n" }
+      it{ expect(subject).to eq "\n" }
     end
 
     context "1回目" do
@@ -15,21 +15,21 @@ describe Ltsv do
         ltsv.set("foo", "hoge")
       end
 
-      it{ should == "foo:hoge\n" }
+      it{ expect(subject).to eq "foo:hoge\n" }
 
       context "2回目" do
         before do
           ltsv.set("bar", "fuga")
         end
 
-        it{ should == "foo:hoge\tbar:fuga\n" }
+        it{ expect(subject).to eq "foo:hoge\tbar:fuga\n" }
 
         context "3回目" do
           before do
             ltsv.set("foo", "piyo")
           end
 
-          it{ should == "bar:fuga\tfoo:piyo\n" }
+          it{ expect(subject).to eq "bar:fuga\tfoo:piyo\n" }
         end
       end
     end
@@ -48,7 +48,7 @@ describe Ltsv do
           ltsv.set(key, val)
         end
 
-        it{ should == excepted }
+        it{ expect(subject).to eq excepted }
       end
     end
   end
@@ -62,10 +62,10 @@ describe Ltsv do
 
       it "値がセットされている" do
         subject
-        ltsv.instance_variable_get(:@hash)[key].should == val
+        expect(ltsv.instance_variable_get(:@hash)[key]).to eq val
       end
 
-      it{ should be_nil }
+      it{ expect(subject).to be_nil }
     end
 
     context "値が入っている時" do
@@ -79,10 +79,10 @@ describe Ltsv do
 
       it "値がセットされている" do
         subject
-        ltsv.instance_variable_get(:@hash)[key].should == val
+        expect(ltsv.instance_variable_get(:@hash)[key]).to eq val
       end
 
-      it{ should == old_val }
+      it{ expect(subject).to eq old_val }
     end
 
     context "異常系" do
@@ -106,7 +106,7 @@ describe Ltsv do
     let(:key) {"foo"}
 
     context "値が入ってない時" do
-      it{ should be_nil }
+      it{ expect(subject).to be_nil }
     end
 
     context "値が入っている時" do
@@ -116,7 +116,7 @@ describe Ltsv do
         ltsv.set(key, val)
       end
 
-      it{ should == val }
+      it{ expect(subject).to eq val }
     end
   end
 
@@ -125,7 +125,7 @@ describe Ltsv do
 
     let(:dump_str) { "foo:hoge\tbar:fuga\n" }
 
-    its(["foo"]){ should == "hoge" }
-    its(["bar"]){ should == "fuga" }
+    it{ expect(subject["foo"]).to eq "hoge" }
+    it{ expect(subject["bar"]).to eq "fuga" }
   end
 end
